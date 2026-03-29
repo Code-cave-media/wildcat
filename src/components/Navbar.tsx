@@ -79,15 +79,18 @@ const Navbar = () => {
         >
           <motion.span
             animate={mobileOpen ? { rotate: 45, y: 10, backgroundColor: "#fff" } : { rotate: 0, y: 0, backgroundColor: "#000" }}
-            className="block h-[2px] w-8 origin-center transition-colors duration-300"
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="block h-[2px] w-8 origin-center"
           />
           <motion.span
             animate={mobileOpen ? { opacity: 0, x: 20 } : { opacity: 1, x: 0, backgroundColor: "#000" }}
-            className="block h-[2px] w-6 transition-all duration-300"
+            transition={{ duration: 0.2 }}
+            className="block h-[2px] w-6"
           />
           <motion.span
             animate={mobileOpen ? { rotate: -45, y: -10, backgroundColor: "#fff", width: "2rem" } : { rotate: 0, y: 0, backgroundColor: "#000", width: "1.2rem" }}
-            className="block h-[2px] origin-center transition-all duration-300"
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="block h-[2px] origin-center"
           />
         </button>
       </div>
