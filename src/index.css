@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 48 92% 54%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 50 4% 89%;
+    --secondary-foreground: 0 0% 7%;
+
+    --muted: 50 4% 89%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 7%;
+    --accent-foreground: 50 11% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 7%;
+    --input: 50 4% 89%;
+    --ring: 48 92% 54%;
+
+    --radius: 0px;
+
+    --sidebar-background: 50 11% 97%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 48 92% 54%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 50 4% 89%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 0 0% 7%;
+    --sidebar-ring: 48 92% 54%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 50 11% 97%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 50 11% 97%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 50 11% 97%;
+
+    --primary: 48 92% 54%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 50 11% 97%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 50 11% 97%;
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 15%;
+    --ring: 48 92% 54%;
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 50 11% 97%;
+    --sidebar-primary: 48 92% 54%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 50 11% 97%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 48 92% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "SOFT" 0, "WONK" 1;
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .font-serif-display {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "SOFT" 0, "WONK" 1;
+  }
+
+  .shadow-brutal {
+    box-shadow: 4px 4px 0px hsl(0 0% 7%);
+  }
+
+  .shadow-brutal-sm {
+    box-shadow: 2px 2px 0px hsl(0 0% 7%);
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
