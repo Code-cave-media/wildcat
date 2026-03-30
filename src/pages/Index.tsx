@@ -132,7 +132,7 @@ const Index = () => {
               <span className="text-[rgb(245,201,28)]">Grow with intent.</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed mb-16">
+            <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl font-serif-display leading-relaxed mb-16">
               We bring cultural insight, strategy, and narrative into one system—so growth has direction.
             </p>
 
@@ -171,7 +171,7 @@ const Index = () => {
               Four disciplines.<br />
               <span className="text-[rgb(245,201,28)]">One unified system.</span>
             </h3>
-            <p className="text-xl md:text-2xl text-neutral-600 font-light max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-neutral-600 font-serif-display max-w-3xl mx-auto">
               An integrated approach that connects insight to action, strategy to growth.
             </p>
           </motion.div>
@@ -193,7 +193,7 @@ const Index = () => {
                   <h4 className="text-2xl lg:text-3xl font-medium">Market & Cultural Insight</h4>
                 </div>
               </div>
-              <p className="text-neutral-600 text-lg lg:text-xl font-light leading-relaxed mb-6">
+              <p className="text-neutral-600 text-lg lg:text-xl font-serif-display leading-relaxed mb-6">
                 Making sense of the market and culture you operate in.
               </p>
               <div className="flex items-center gap-2 text-[rgb(245,201,28)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -218,7 +218,7 @@ const Index = () => {
                   <h4 className="text-2xl lg:text-3xl font-medium">Brand Strategy</h4>
                 </div>
               </div>
-              <p className="text-neutral-600 text-lg lg:text-xl font-light leading-relaxed mb-6">
+              <p className="text-neutral-600 text-lg lg:text-xl font-serif-display leading-relaxed mb-6">
                 Defining position, direction, and competitive edge.
               </p>
               <div className="flex items-center gap-2 text-[rgb(245,201,28)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -243,7 +243,7 @@ const Index = () => {
                   <h4 className="text-2xl lg:text-3xl font-medium">Brand Narrative</h4>
                 </div>
               </div>
-              <p className="text-neutral-600 text-lg lg:text-xl font-light leading-relaxed mb-6">
+              <p className="text-neutral-600 text-lg lg:text-xl font-serif-display leading-relaxed mb-6">
                 Turning strategy into language people remember.
               </p>
               <div className="flex items-center gap-2 text-[rgb(245,201,28)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -268,7 +268,7 @@ const Index = () => {
                   <h4 className="text-2xl lg:text-3xl font-medium">Performance & Growth</h4>
                 </div>
               </div>
-              <p className="text-neutral-600 text-lg lg:text-xl font-light leading-relaxed mb-6">
+              <p className="text-neutral-600 text-lg lg:text-xl font-serif-display leading-relaxed mb-6">
                 Making sure it all translates into real market movement.
               </p>
               <div className="flex items-center gap-2 text-[rgb(245,201,28)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -299,7 +299,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* INTERVENTIONS PREVIEW */}
+      {/* INTERVENTIONS */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -446,7 +446,7 @@ const Index = () => {
               className="lg:col-span-5 flex flex-col justify-between"
             >
               <div>
-                <h2 className="text-sm font-mono tracking-widest text-neutral-500 uppercase mb-8">Interventions Preview</h2>
+                <h2 className="text-sm font-mono tracking-widest text-neutral-500 uppercase mb-8">Interventions</h2>
                 <h3 className="text-4xl md:text-5xl font-medium tracking-tight leading-[1.15] mb-6 text-black">
                   We don't take on projects.<br />
                   <span className="text-[rgb(245,201,28)]">We step in when something needs to change.</span>
@@ -466,7 +466,7 @@ const Index = () => {
               className="lg:col-span-6 lg:col-start-7 flex flex-col justify-center relative overflow-hidden rounded-2xl border border-neutral-200"
             >
               <div className="relative bg-white/60 backdrop-blur-sm p-8 md:p-12">
-                <ul className="space-y-8 text-2xl md:text-3xl font-light text-neutral-800">
+                <ul className="space-y-8 text-2xl md:text-3xl font-serif-display italic text-neutral-800">
                   {["Outgrown identity", "Stalled growth", "Misaligned teams", "Weak positioning"].map((item, i) => (
                     <motion.li
                       key={item}
@@ -502,11 +502,11 @@ const Index = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-2xl"
           >
-            <h2 className="text-sm font-mono tracking-widest text-black/60 uppercase mb-8">Intelligence Preview</h2>
+            <h2 className="text-sm font-mono tracking-widest text-black/60 uppercase mb-8">Intelligence</h2>
             <h3 className="text-4xl md:text-6xl font-medium tracking-tight leading-[1.05] mb-6">
               On markets, culture, and brands.
             </h3>
-            <p className="text-xl md:text-2xl text-black/80 font-light">
+            <p className="text-xl md:text-2xl text-black/80 font-serif-display">
               What we're seeing. What it means.
             </p>
           </motion.div>
