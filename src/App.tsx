@@ -7,14 +7,10 @@ import { useState } from "react";
 import { LoadingScreen } from "./components/LoadingScreen.tsx";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import About from "./pages/About.tsx";
-import Services from "./pages/Services.tsx";
-import Intelligence from "./pages/Intelligence.tsx";
-import CaseStudies from "./pages/CaseStudies.tsx";
-import Insights from "./pages/Insights.tsx";
-import Contact from "./pages/Contact.tsx";
-import ClarityCall from "./pages/ClarityCall.tsx";
 import Capabilities from "./pages/Capabilities.tsx";
+import Interventions from "./pages/Interventions.tsx";
+import Intelligence from "./pages/Intelligence.tsx";
+import WhoWeAre from "./pages/WhoWeAre.tsx";
 import { SmoothScroll } from "./components/SmoothScroll.tsx";
 
 const queryClient = new QueryClient();
@@ -35,14 +31,10 @@ const App = () => {
             <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/intelligence" element={<Intelligence />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/insights" element={<Insights />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/clarity-call" element={<ClarityCall />} />
             <Route path="/capabilities" element={<Capabilities />} />
+            <Route path="/interventions" element={<Interventions />} />
+            <Route path="/intelligence" element={<Intelligence />} />
+            <Route path="/who-we-are" element={<WhoWeAre />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
