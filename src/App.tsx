@@ -14,6 +14,7 @@ import CaseStudies from "./pages/CaseStudies.tsx";
 import Insights from "./pages/Insights.tsx";
 import Contact from "./pages/Contact.tsx";
 import ClarityCall from "./pages/ClarityCall.tsx";
+import Capabilities from "./pages/Capabilities.tsx";
 import { SmoothScroll } from "./components/SmoothScroll.tsx";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/insights" element={<Insights />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/clarity-call" element={<ClarityCall />} />
+            <Route path="/capabilities" element={<Capabilities />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
