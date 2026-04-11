@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 const SpotlightCard = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
   const divRef = useRef<HTMLDivElement>(null);
@@ -62,62 +62,67 @@ const CapabilitySection = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="group grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start relative pb-24 border-b border-neutral-200 last:border-b-0"
+      className="group grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-stretch relative pb-24 border-b border-neutral-200 last:border-b-0"
     >
       <div className="lg:col-span-1 flex items-start">
         <motion.div 
           whileHover={{ scale: 1.1, rotate: 5 }}
-          className="w-16 h-16 bg-[rgb(245,201,28)]/10 rounded-2xl flex items-center justify-center -ml-2 transition-colors duration-500 group-hover:bg-[rgb(245,201,28)]/20 cursor-default"
+          className="w-16 h-16 bg-[rgb(245,201,28)]/10 rounded-2xl flex items-center justify-center -ml-2 transition-colors duration-500 group-hover:bg-[rgb(245,201,28)]/20 cursor-default shrink-0"
         >
           <span className="text-[rgb(245,201,28)] font-bold text-2xl">{number}</span>
         </motion.div>
       </div>
-      <div className="lg:col-span-5 relative">
+      <div className="lg:col-span-5 relative flex flex-col">
         <h2 className="text-4xl lg:text-5xl font-medium tracking-tight mb-6 transition-colors duration-500 group-hover:text-[rgb(245,201,28)]">{title}</h2>
         <p className="text-2xl text-neutral-800 font-serif-display leading-relaxed mb-4">
           {subtitle}
         </p>
-        <p className="text-lg text-neutral-600 leading-relaxed">
+        <p className="text-lg text-neutral-600 leading-relaxed mb-10">
           {description}
         </p>
+        
+        <div className="mt-auto pt-8 border-t border-neutral-100">
+          <h3 className="text-sm font-mono tracking-widest text-neutral-500 uppercase mb-6 flex items-center gap-3">
+            What we do
+            <motion.div 
+              animate={{ x: [0, 5, 0] }} 
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ArrowRight className="w-4 h-4 text-[rgb(245,201,28)]" />
+            </motion.div>
+          </h3>
+          <ul className="space-y-4 font-serif-display text-lg lg:text-xl text-neutral-800">
+            {todos.map((todo, idx) => (
+              <li key={idx} className="flex items-start gap-4 group/item cursor-default">
+                <motion.span 
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.5 }}
+                  className="text-[rgb(245,201,28)] mt-1.5 text-xs inline-block origin-center transition-transform"
+                >
+                  ●
+                </motion.span>
+                <span className="group-hover/item:translate-x-2 transition-transform duration-300">{todo}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       
-      <div className="lg:col-span-5 lg:col-start-8">
-        <SpotlightCard className="bg-white p-8 md:p-10 rounded-3xl border border-neutral-100 h-full">
-          <div className="mb-10">
-            <h3 className="text-sm font-mono tracking-widest text-neutral-500 uppercase mb-6 flex items-center gap-3">
-              What we do
-              <motion.div 
-                animate={{ x: [0, 5, 0] }} 
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <ArrowRight className="w-4 h-4 text-[rgb(245,201,28)]" />
-              </motion.div>
-            </h3>
-            <ul className="space-y-4 font-serif-display text-lg lg:text-xl text-neutral-800">
-              {todos.map((todo, idx) => (
-                <li key={idx} className="flex items-start gap-4 group/item cursor-default">
-                  <motion.span 
-                    initial={{ scale: 1 }}
-                    whileHover={{ scale: 1.5 }}
-                    className="text-[rgb(245,201,28)] mt-1.5 text-xs inline-block origin-center transition-transform"
-                  >
-                    ●
-                  </motion.span>
-                  <span className="group-hover/item:translate-x-2 transition-transform duration-300">{todo}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <motion.div 
-            className="pt-8 border-t border-neutral-200"
-            whileHover={{ y: -2 }}
-          >
-            <h3 className="text-sm font-mono tracking-widest text-neutral-500 uppercase mb-4">Outcome</h3>
-            <p className="text-xl font-medium text-black">
+      <div className="lg:col-span-5 lg:col-start-8 h-full">
+        <SpotlightCard className="bg-[rgb(245,201,28)]/5 p-8 md:p-10 rounded-3xl border border-[rgb(245,201,28)]/20 h-full flex flex-col justify-center min-h-[350px] relative overflow-hidden group/card">
+          {/* Visual Highlight Elements */}
+          <div className="absolute -right-20 -top-20 w-64 h-64 bg-[rgb(245,201,28)]/20 rounded-full blur-[60px] group-hover/card:bg-[rgb(245,201,28)]/30 transition-colors duration-500"></div>
+          <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-[rgb(245,201,28)]/10 rounded-full blur-[40px]"></div>
+          
+          <div className="relative z-10">
+            <div className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 shadow-sm border border-white">
+                <Sparkles className="w-6 h-6 text-[rgb(245,201,28)] drop-shadow-sm" />
+            </div>
+            <h3 className="text-sm font-mono tracking-widest text-[#B38F14] uppercase mb-4 font-semibold">Outcome</h3>
+            <p className="text-2xl md:text-3xl font-medium text-black leading-tight">
               {outcome}
             </p>
-          </motion.div>
+          </div>
         </SpotlightCard>
       </div>
     </motion.div>
@@ -199,7 +204,7 @@ const Capabilities = () => {
               transition={{ duration: 1, delay: 0.2 }}
               className="text-2xl md:text-3xl lg:text-4xl text-black font-medium tracking-tight leading-tight mb-8"
             >
-              We don’t just execute. <span className="text-[rgb(245,201,28)] inline-block hover:scale-105 transition-transform duration-300">We think before we move.</span>
+              We don't just execute. <span className="bg-[rgb(245,201,28)] text-black px-3 py-1 inline-block">We think before we move.</span>
             </motion.p>
             
             <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl font-serif-display leading-relaxed">

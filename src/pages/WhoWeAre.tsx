@@ -1,188 +1,256 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import founder1 from "@/img/founder1.png";
+import founder2 from "@/img/founder2.png";
+import founder3 from "@/img/founder3.png";
 const WhoWeAre = () => {
   return (
     <div className="min-h-screen bg-white text-black selection:bg-[rgb(245,201,28)] selection:text-black font-sans">
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 lg:px-12 flex flex-col justify-center min-h-[90vh] border-b border-neutral-100 overflow-hidden bg-white">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 z-0 pointer-events-none bg-no-repeat bg-cover bg-center md:bg-right opacity-90 mix-blend-multiply"
-          style={{ backgroundImage: "url('/bg.jpg')" }}
-        />
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 lg:px-12 flex flex-col justify-center min-h-[90vh] bg-white overflow-hidden">
+        {/* Abstract Background Elements matching the vibe */}
+        <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/5 opacity-40 md:opacity-100 pointer-events-none z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10 md:hidden" />
+          <div 
+            className="w-full h-full bg-no-repeat bg-cover bg-left md:bg-center"
+            style={{ backgroundImage: "url('/bg.jpg')" }}
+          />
+          {/* subtle gradient overlay to match blending */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent z-10 hidden md:block" />
+        </div>
         
-        <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="max-w-7xl mx-auto w-full relative z-10 flex">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-5xl mt-12 md:mt-20"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-[6.5rem] font-medium tracking-[-0.02em] leading-[1.05] mb-8 max-w-5xl">
-              We bring <span className="text-[rgb(245,201,28)]">clarity</span> to complexity.
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif tracking-tight leading-[1.15] mb-10 text-black">
+              We don’t act like an agency. <br className="hidden md:block" />
+              <span className="inline-block bg-[rgb(245,201,28)] text-black px-6 py-2 mt-4 lg:mt-6 font-medium whitespace-nowrap lg:text-[5rem]">
+                And that’s the point.
+              </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed mb-16">
-              Wildcat is a strategic consultancy that helps businesses find their direction, tell their story, and grow with intent.
+            <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl font-light leading-relaxed">
+              We work closely with founders and teams to figure out what their brand actually needs—and then help them move.
             </p>
-
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 border-t border-neutral-200 pt-8 mt-12 w-full">
-              <p className="text-sm font-mono tracking-widest text-neutral-500 uppercase">
-                Strategy. Narrative. Growth.
-              </p>
-              <Link
-                to="/capabilities"
-                className="group flex items-center gap-3 text-sm font-medium uppercase tracking-widest bg-[rgb(245,201,28)] text-black px-6 py-4 hover:opacity-80 transition-opacity"
-              >
-                Explore Our Work
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ABOUT SECTION */}
-      <section className="py-24 md:py-32 px-6 lg:px-12 bg-neutral-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-8">
-                We're not consultants. <br />
-                <span className="text-[rgb(245,201,28)]">We're partners.</span>
-              </h2>
-              <p className="text-xl text-neutral-600 font-light leading-relaxed mb-6">
-                Founded on the belief that great businesses are built on clarity, not complexity. We work with leaders who are ready to make meaningful change.
-              </p>
-              <p className="text-xl text-neutral-600 font-light leading-relaxed mb-8">
-                Our approach combines cultural insight, strategic thinking, and practical execution to help you navigate challenges and seize opportunities.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-[rgb(245,201,28)] rounded-full"></div>
-                  <span className="text-lg">Data-driven insights</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-[rgb(245,201,28)] rounded-full"></div>
-                  <span className="text-lg">Strategic clarity</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-[rgb(245,201,28)] rounded-full"></div>
-                  <span className="text-lg">Measurable growth</span>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-white p-8 lg:p-12 rounded-2xl border border-neutral-200"
-            >
-              <h3 className="text-2xl font-medium mb-6">Our Approach</h3>
-              <div className="space-y-6">
-                <div className="pb-6 border-b border-neutral-200">
-                  <h4 className="text-lg font-medium mb-2">Listen First</h4>
-                  <p className="text-neutral-600">We start by understanding your world - your challenges, your opportunities, your vision.</p>
-                </div>
-                <div className="pb-6 border-b border-neutral-200">
-                  <h4 className="text-lg font-medium mb-2">Think Clearly</h4>
-                  <p className="text-neutral-600">We bring clarity to complex problems through structured thinking and analysis.</p>
-                </div>
-                <div className="pb-6 border-b border-neutral-200">
-                  <h4 className="text-lg font-medium mb-2">Act Decisively</h4>
-                  <p className="text-neutral-600">We help you move forward with confidence and purpose.</p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-medium mb-2">Grow Sustainably</h4>
-                  <p className="text-neutral-600">We ensure your growth is steady, strategic, and sustainable.</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT SECTION */}
+      {/* FOUNDING TEAM SECTION */}
       <section className="py-24 md:py-32 px-6 lg:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-center mb-16"
+            transition={{ duration: 0.8 }}
+            className="mb-20 text-center"
           >
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-6">
-              Ready to bring <span className="text-[rgb(245,201,28)]">clarity</span> to your business?
+            <h2 className="text-4xl md:text-6xl font-serif tracking-tight mb-6">
+              Founding Team
             </h2>
-            <p className="text-xl md:text-2xl text-neutral-600 font-light max-w-3xl mx-auto">
-              Let's talk about your challenges and opportunities. We're here to help you move forward with confidence.
-            </p>
+            <div className="w-16 h-1 bg-[rgb(245,201,28)] mx-auto"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+            {/* Founder 1 */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: 0.1, duration: 0.7 }}
-              className="text-center p-8 bg-neutral-50 rounded-2xl"
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="group flex flex-col items-center text-center"
             >
-              <Mail className="w-8 h-8 text-[rgb(245,201,28)] mx-auto mb-4" />
-              <h3 className="text-xl font-medium mb-2">Email</h3>
-              <p className="text-neutral-600">hello@wildcat.com</p>
+              <div className="w-full max-w-[280px] aspect-square rounded-full mb-8 overflow-hidden bg-neutral-50 border border-neutral-100 flex items-center justify-center relative">
+                <div className="absolute inset-0 bg-[rgb(245,201,28)]/5 group-hover:bg-[rgb(245,201,28)]/20 transition-colors duration-500 rounded-full"></div>
+                <img src={founder1} alt="Founder 1" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+              </div>
+              <h3 className="text-3xl font-serif mb-3">Founder Name</h3>
+              <p className="text-neutral-500 font-light text-lg max-w-sm leading-relaxed">A brief one or two liner highlighting their unique perspective, specific expertise, and background.</p>
             </motion.div>
 
+            {/* Founder 2 */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: 0.2, duration: 0.7 }}
-              className="text-center p-8 bg-neutral-50 rounded-2xl"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="group flex flex-col items-center text-center"
             >
-              <Phone className="w-8 h-8 text-[rgb(245,201,28)] mx-auto mb-4" />
-              <h3 className="text-xl font-medium mb-2">Phone</h3>
-              <p className="text-neutral-600">+1 (555) 123-4567</p>
+              <div className="w-full max-w-[280px] aspect-square rounded-full mb-8 overflow-hidden bg-neutral-50 border border-neutral-100 flex items-center justify-center relative">
+                <div className="absolute inset-0 bg-[rgb(245,201,28)]/5 group-hover:bg-[rgb(245,201,28)]/20 transition-colors duration-500 rounded-full"></div>
+                <img src={founder2} alt="Founder 2" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+              </div>
+              <h3 className="text-3xl font-serif mb-3">Founder Name</h3>
+              <p className="text-neutral-500 font-light text-lg max-w-sm leading-relaxed">A brief one or two liner highlighting their unique perspective, specific expertise, and background.</p>
             </motion.div>
 
+            {/* Founder 3 */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: 0.3, duration: 0.7 }}
-              className="text-center p-8 bg-neutral-50 rounded-2xl"
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="group flex flex-col items-center text-center"
             >
-              <MapPin className="w-8 h-8 text-[rgb(245,201,28)] mx-auto mb-4" />
-              <h3 className="text-xl font-medium mb-2">Location</h3>
-              <p className="text-neutral-600">San Francisco, CA</p>
+              <div className="w-full max-w-[280px] aspect-square rounded-full mb-8 overflow-hidden bg-neutral-50 border border-neutral-100 flex items-center justify-center relative">
+                <div className="absolute inset-0 bg-[rgb(245,201,28)]/5 group-hover:bg-[rgb(245,201,28)]/20 transition-colors duration-500 rounded-full"></div>
+                <img src={founder3} alt="Founder 3" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+              </div>
+              <h3 className="text-3xl font-serif mb-3">Founder Name</h3>
+              <p className="text-neutral-500 font-light text-lg max-w-sm leading-relaxed">A brief one or two liner highlighting their unique perspective, specific expertise, and background.</p>
             </motion.div>
           </div>
+        </div>
+      </section>
 
+      {/* WHAT IT'S LIKE WORKING WITH US */}
+      <section className="py-24 md:py-32 px-6 lg:px-12 bg-neutral-50/50">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 1 }}
-            className="text-center"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="mb-20 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-neutral-200 pb-8"
           >
+            <div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight mb-4">
+                What It’s Like <br className="hidden md:block" />
+                <span className="text-[rgb(245,201,28)] italic">Working With Us</span>
+              </h2>
+            </div>
+            <p className="text-neutral-500 font-light max-w-sm text-lg md:text-right">
+              We follow a principled approach that prioritizes truth over comfort, ensuring we build what matters.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-20">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex flex-col md:flex-row gap-6 md:gap-8 items-start group"
+            >
+              <span className="text-6xl lg:text-7xl font-serif font-light text-neutral-200 group-hover:text-[rgb(245,201,28)] transition-colors duration-500 leading-none">01</span>
+              <div className="pt-2">
+                <h3 className="text-3xl font-serif mb-4">Understand</h3>
+                <p className="text-xl text-neutral-600 font-light flex items-center gap-3">
+                  We listen more than we talk. <ArrowRight className="w-5 h-5 text-[rgb(245,201,28)] opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300" />
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-col md:flex-row gap-6 md:gap-8 items-start group"
+            >
+              <span className="text-6xl lg:text-7xl font-serif font-light text-neutral-200 group-hover:text-[rgb(245,201,28)] transition-colors duration-500 leading-none">02</span>
+              <div className="pt-2">
+                <h3 className="text-3xl font-serif mb-4">Challenge</h3>
+                <p className="text-xl text-neutral-600 font-light flex items-center gap-3">
+                  We question assumptions (including yours). <ArrowRight className="w-5 h-5 text-[rgb(245,201,28)] opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300" />
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col md:flex-row gap-6 md:gap-8 items-start group"
+            >
+              <span className="text-6xl lg:text-7xl font-serif font-light text-neutral-200 group-hover:text-[rgb(245,201,28)] transition-colors duration-500 leading-none">03</span>
+              <div className="pt-2">
+                <h3 className="text-3xl font-serif mb-4">Clarify</h3>
+                <p className="text-xl text-neutral-600 font-light flex items-center gap-3">
+                  We simplify what actually matters. <ArrowRight className="w-5 h-5 text-[rgb(245,201,28)] opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300" />
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-col md:flex-row gap-6 md:gap-8 items-start group"
+            >
+              <span className="text-6xl lg:text-7xl font-serif font-light text-neutral-200 group-hover:text-[rgb(245,201,28)] transition-colors duration-500 leading-none">04</span>
+              <div className="pt-2">
+                <h3 className="text-3xl font-serif mb-4">Build & Move</h3>
+                <p className="text-xl text-neutral-600 font-light flex items-center gap-3">
+                  We help you act—not just plan. <ArrowRight className="w-5 h-5 text-[rgb(245,201,28)] opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300" />
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* WE WORK BEST WITH */}
+      <section className="py-24 md:py-32 px-6 lg:px-12 bg-neutral-900 text-white relative">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-[rgb(245,201,28)]/5 blur-[120px] pointer-events-none rounded-full" />
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="flex-1"
+          >
+            <h2 className="text-5xl md:text-6xl font-serif tracking-tight mb-12">
+              We Work Best With
+            </h2>
+            <ul className="space-y-8">
+              <li className="flex items-start gap-6 group">
+                <div className="w-3 h-3 mt-2.5 bg-[rgb(245,201,28)] rounded-full shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
+                <span className="text-2xl md:text-3xl font-light text-neutral-300 group-hover:text-white transition-colors duration-300">Founders who are honest about what’s not working</span>
+              </li>
+              <li className="flex items-start gap-6 group">
+                <div className="w-3 h-3 mt-2.5 bg-[rgb(245,201,28)] rounded-full shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
+                <span className="text-2xl md:text-3xl font-light text-neutral-300 group-hover:text-white transition-colors duration-300">Teams that want clarity, not just activity</span>
+              </li>
+              <li className="flex items-start gap-6 group">
+                <div className="w-3 h-3 mt-2.5 bg-[rgb(245,201,28)] rounded-full shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
+                <span className="text-2xl md:text-3xl font-light text-neutral-300 group-hover:text-white transition-colors duration-300">People willing to rethink things</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="flex-1 bg-white/5 backdrop-blur-md p-10 md:p-14 rounded-[2rem] border border-white/10 w-full relative overflow-hidden group hover:border-[rgb(245,201,28)]/50 transition-colors duration-500"
+          >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[rgb(245,201,28)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <p className="text-3xl md:text-4xl font-serif font-light leading-snug mb-10 text-neutral-200">
+              <span className="text-[rgb(245,201,28)] text-5xl italic pr-2">"</span>
+              If something feels off, it probably is. <br className="hidden md:block" />
+              <span className="text-white font-medium mt-4 block">Let’s figure it out.</span>
+            </p>
             <Link
-              to="/capabilities"
-              className="inline-flex items-center gap-3 bg-[rgb(245,201,28)] text-black px-8 py-5 text-sm font-medium uppercase tracking-widest hover:opacity-80 transition-transform hover:scale-105 active:scale-95 duration-300 group"
+              to="/clarity-call"
+              className="inline-flex items-center gap-4 bg-[rgb(245,201,28)] text-black px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all hover:scale-105 active:scale-95 duration-300 rounded-full"
             >
               Start a Conversation
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
         </div>
