@@ -54,10 +54,40 @@ const Interventions = () => {
 
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 lg:px-12 flex flex-col justify-center min-h-[70vh] border-b border-neutral-100 overflow-hidden bg-white">
-        <div 
-          className="absolute inset-0 z-0 pointer-events-none bg-no-repeat bg-cover bg-center md:bg-right opacity-90 mix-blend-multiply"
-          style={{ backgroundImage: "url('/bg.jpg')" }}
-        />
+        {/* Dynamic Motion Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#fafafa]">
+          <div className="absolute inset-0 opacity-40">
+            <motion.div
+              className="absolute top-[-15%] right-[-5%] w-[45vw] h-[45vw] max-w-[600px] max-h-[600px] bg-[rgb(245,201,28)]/30 rounded-full blur-[100px]"
+              animate={{
+                x: [0, -60, 0],
+                y: [0, 60, 0],
+                scale: [1, 1.15, 1],
+              }}
+              transition={{
+                duration: 16,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute bottom-[-10%] left-[10%] w-[55vw] h-[55vw] max-w-[800px] max-h-[800px] bg-neutral-400/20 rounded-full blur-[120px]"
+              animate={{
+                x: [0, 80, 0],
+                y: [0, -50, 0],
+                scale: [1, 1.1, 1]
+              }}
+              transition={{
+                duration: 22,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2
+              }}
+            />
+            {/* Grid Overlay */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_40%,#000_70%,transparent_100%)]"></div>
+          </div>
+        </div>
         
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <motion.div
@@ -200,7 +230,10 @@ const Interventions = () => {
                 </div>
 
                 {/* Right Side: Scrollable Content */}
-                <div className="w-full md:w-1/2 flex-1 min-h-0 overflow-y-auto bg-white p-8 md:p-12 lg:p-16 relative">
+                <div 
+                  className="w-full md:w-1/2 flex-1 min-h-0 overflow-y-auto bg-white p-8 md:p-12 lg:p-16 relative"
+                  data-lenis-prevent="true"
+                >
                   <div className="max-w-2xl mx-auto space-y-20 pb-12 md:pb-0">
                     
                     {/* The Scenario */}

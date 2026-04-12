@@ -13,13 +13,43 @@ const WhoWeAre = () => {
 
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 lg:px-12 flex flex-col justify-center min-h-[90vh] bg-white overflow-hidden">
-        {/* Abstract Background Elements matching the vibe */}
-        <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/5 opacity-40 md:opacity-100 pointer-events-none z-0">
+        {/* Dynamic Motion Background Element */}
+        <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/5 opacity-60 md:opacity-100 pointer-events-none z-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10 md:hidden" />
-          <div 
-            className="w-full h-full bg-no-repeat bg-cover bg-left md:bg-center"
-            style={{ backgroundImage: "url('/bg.jpg')" }}
-          />
+          
+          {/* Live Motion Background */}
+          <div className="absolute inset-0 w-full h-full">
+            <motion.div
+              className="absolute top-[10%] right-[-10%] w-[30rem] h-[30rem] bg-[rgb(245,201,28)]/20 rounded-full blur-[80px]"
+              animate={{
+                x: [0, -30, 0],
+                y: [0, 40, 0],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 15,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute bottom-[-10%] right-[10%] w-[40rem] h-[40rem] bg-neutral-300/30 rounded-full blur-[100px]"
+              animate={{
+                x: [0, 50, 0],
+                y: [0, -30, 0],
+                scale: [1, 1.2, 1]
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2
+              }}
+            />
+            {/* Grid pattern */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_70%_50%,#000_60%,transparent_100%)]"></div>
+          </div>
+
           {/* subtle gradient overlay to match blending */}
           <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent z-10 hidden md:block" />
         </div>
@@ -74,8 +104,11 @@ const WhoWeAre = () => {
                 <div className="absolute inset-0 bg-[rgb(245,201,28)]/5 group-hover:bg-[rgb(245,201,28)]/20 transition-colors duration-500 rounded-full"></div>
                 <img src={founder1} alt="Founder 1" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
               </div>
-              <h3 className="text-3xl font-serif mb-3">Founder Name</h3>
-              <p className="text-neutral-500 font-light text-lg max-w-sm leading-relaxed">A brief one or two liner highlighting their unique perspective, specific expertise, and background.</p>
+              <h3 className="text-3xl font-serif mb-2">Dr Ananthu S.</h3>
+              <div className="min-h-[3rem] flex justify-center mb-4 px-2 w-full">
+                <h4 className="text-[rgb(245,201,28)] font-medium text-xs tracking-widest uppercase leading-snug max-w-[280px]">Founder | Principal, Brand Strategy &amp; Intelligence</h4>
+              </div>
+              <p className="text-neutral-500 font-light text-base md:text-lg max-w-[320px] leading-relaxed">Former academic. Analytical thinker with a sharp eye for patterns. Blends a strong research mindset with a creative edge to turn insights into clear, effective direction.</p>
             </motion.div>
 
             {/* Founder 2 */}
@@ -90,8 +123,11 @@ const WhoWeAre = () => {
                 <div className="absolute inset-0 bg-[rgb(245,201,28)]/5 group-hover:bg-[rgb(245,201,28)]/20 transition-colors duration-500 rounded-full"></div>
                 <img src={founder2} alt="Founder 2" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
               </div>
-              <h3 className="text-3xl font-serif mb-3">Founder Name</h3>
-              <p className="text-neutral-500 font-light text-lg max-w-sm leading-relaxed">A brief one or two liner highlighting their unique perspective, specific expertise, and background.</p>
+              <h3 className="text-3xl font-serif mb-2">Avinash S Kumar</h3>
+              <div className="min-h-[3rem] flex justify-center mb-4 px-2 w-full">
+                <h4 className="text-[rgb(245,201,28)] font-medium text-xs tracking-widest uppercase leading-snug max-w-[280px]">Co-Founder | Principal, Growth &amp; Marketing Ops</h4>
+              </div>
+              <p className="text-neutral-500 font-light text-base md:text-lg max-w-[320px] leading-relaxed">Left corporate early; the ladder was never the game. Marketer and multimedia professional crafting narratives that move people.</p>
             </motion.div>
 
             {/* Founder 3 */}
@@ -106,8 +142,11 @@ const WhoWeAre = () => {
                 <div className="absolute inset-0 bg-[rgb(245,201,28)]/5 group-hover:bg-[rgb(245,201,28)]/20 transition-colors duration-500 rounded-full"></div>
                 <img src={founder3} alt="Founder 3" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
               </div>
-              <h3 className="text-3xl font-serif mb-3">Founder Name</h3>
-              <p className="text-neutral-500 font-light text-lg max-w-sm leading-relaxed">A brief one or two liner highlighting their unique perspective, specific expertise, and background.</p>
+              <h3 className="text-3xl font-serif mb-2">Swathi Suresh</h3>
+              <div className="min-h-[3rem] flex justify-center mb-4 px-2 w-full">
+                <h4 className="text-[rgb(245,201,28)] font-medium text-xs tracking-widest uppercase leading-snug max-w-[280px]">Co-Founder | Director, People &amp; Ops</h4>
+              </div>
+              <p className="text-neutral-500 font-light text-base md:text-lg max-w-[320px] leading-relaxed">Corporate roots, but not limited by them. Where structure meets creativity, and things just click.</p>
             </motion.div>
           </div>
         </div>
