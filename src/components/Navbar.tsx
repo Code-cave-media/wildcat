@@ -42,30 +42,30 @@ const Navbar = () => {
           : "z-50 bg-white/80 backdrop-blur-md border-b border-neutral-100"
       }`}
     >
-      <div className="container flex items-center justify-between h-16">
+      <div className="container flex items-center justify-between h-20 md:h-24">
         <Link to="/" className="flex items-center gap-2 relative z-[60]" onClick={() => setMobileOpen(false)}>
           <img 
             src={logo} 
             alt="Wildcat" 
-            className="h-6 transition-all duration-300"
+            className="h-8 md:h-10 transition-all duration-300"
             style={{ filter: mobileOpen ? "brightness(0) invert(1)" : "none" }}
           />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               to={link.href}
-              className="text-sm font-sans tracking-tight hover:text-primary transition-colors duration-200"
+              className="text-base font-sans tracking-tight hover:text-primary transition-colors duration-200"
             >
               {link.label}
             </Link>
           ))}
           <Link
             to="/clarity-call"
-            className="bg-primary text-primary-foreground px-5 py-2.5 text-sm font-sans font-semibold tracking-tight hover:opacity-90 transition-opacity"
+            className="bg-primary text-primary-foreground px-7 py-3 text-base font-sans font-semibold tracking-tight hover:opacity-90 transition-opacity"
           >
             Clarity Call
           </Link>
