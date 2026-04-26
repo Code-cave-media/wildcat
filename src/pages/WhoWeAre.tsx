@@ -159,9 +159,9 @@ const WhoWeAre = () => {
                 </h4>
               </div>
               <p className="text-neutral-500 font-light text-base md:text-lg max-w-[320px] leading-relaxed">
-                Former academic. Analytical thinker with a sharp eye for
-                patterns. Blends a strong research mindset with a creative edge
-                to turn insights into clear, effective direction.
+                Former academic. Sharp pattern thinker. Blends research depth
+                with a creative edge to turn insights into clear, effective
+                direction.
               </p>
             </motion.div>
 
@@ -188,7 +188,7 @@ const WhoWeAre = () => {
                 </h4>
               </div>
               <p className="text-neutral-500 font-light text-base md:text-lg max-w-[320px] leading-relaxed">
-                Left corporate early; the ladder was never the game. Marketer
+                Left corporate early; the ladder wasn't the game. Marketer
                 and multimedia professional crafting narratives that move
                 people.
               </p>
@@ -217,8 +217,8 @@ const WhoWeAre = () => {
                 </h4>
               </div>
               <p className="text-neutral-500 font-light text-base md:text-lg max-w-[320px] leading-relaxed">
-                Corporate roots, but not limited by them. Where structure meets
-                creativity, and things just click.
+                Corporate roots, but not confined by them. Where structure meets
+                creativity—and things click into place.
               </p>
             </motion.div>
           </div>
