@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 48 92% 54%;
+    --primary: 49 100% 50%;
     --primary-foreground: 0 0% 0%;
 
     --secondary: 50 4% 89%;
@@ -28,9 +28,9 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 7%;
+    --border: 0 0% 20%;
     --input: 50 4% 89%;
-    --ring: 48 92% 54%;
+    --ring: 49 100% 50%;
 
     --radius: 0px;
 
@@ -54,7 +54,7 @@
     --popover: 0 0% 7%;
     --popover-foreground: 50 11% 97%;
 
-    --primary: 48 92% 54%;
+    --primary: 49 100% 50%;
     --primary-foreground: 0 0% 0%;
 
     --secondary: 0 0% 15%;
@@ -71,7 +71,7 @@
 
     --border: 0 0% 25%;
     --input: 0 0% 15%;
-    --ring: 48 92% 54%;
+    --ring: 49 100% 50%;
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 50 11% 97%;
     --sidebar-primary: 48 92% 54%;
@@ -92,17 +92,20 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Fraunces', serif;
-    font-variation-settings: "SOFT" 0, "WONK" 1;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
     text-wrap: balance;
   }
 }
 
 @layer utilities {
   .font-serif-display {
-    font-family: 'Fraunces', serif;
-    font-variation-settings: "SOFT" 0, "WONK" 1;
+    font-family: "Playfair Display", serif;
   }
 
   .shadow-brutal {

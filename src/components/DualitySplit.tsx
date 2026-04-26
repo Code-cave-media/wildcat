@@ -23,10 +23,13 @@ const DualitySplit = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 min-h-[70vh]">
         {/* Left: What We See */}
         <motion.div
-           initial={{ opacity: 0, y: 60 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true, margin: "-100px" }}
-           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{
+            duration: 0.8,
+            ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+          }}
           className="relative p-8 md:p-16 flex flex-col justify-between border-b md:border-b-0 md:border-r border-foreground/10 cursor-pointer overflow-hidden"
           onMouseEnter={() => setHoveredLeft(true)}
           onMouseLeave={() => setHoveredLeft(false)}
@@ -65,13 +68,22 @@ const DualitySplit = () => {
                 key={i}
                 className="border-b border-foreground/10 pb-4"
                 animate={{ opacity: hoveredLeft ? 1 : 0.6 }}
-                transition={{ duration: 0.4, delay: hoveredLeft ? i * 0.08 : 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: hoveredLeft ? i * 0.08 : 0,
+                }}
               >
                 <div className="flex items-baseline gap-3">
                   <motion.span
                     className="text-2xl md:text-3xl font-serif text-primary/30 tabular"
-                    animate={{ opacity: hoveredLeft ? 1 : 0.4, scale: hoveredLeft ? 1.1 : 1 }}
-                    transition={{ duration: 0.3, delay: hoveredLeft ? i * 0.08 : 0 }}
+                    animate={{
+                      opacity: hoveredLeft ? 1 : 0.4,
+                      scale: hoveredLeft ? 1.1 : 1,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      delay: hoveredLeft ? i * 0.08 : 0,
+                    }}
                   >
                     0{i + 1}
                   </motion.span>
@@ -84,17 +96,26 @@ const DualitySplit = () => {
               className="inline-flex items-center gap-2 text-sm font-sans font-semibold tracking-tight text-primary mt-4"
             >
               Explore Intelligence
-              <motion.span animate={{ x: hoveredLeft ? 6 : 0 }} transition={{ duration: 0.3 }}>→</motion.span>
+              <motion.span
+                animate={{ x: hoveredLeft ? 6 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                →
+              </motion.span>
             </Link>
           </div>
         </motion.div>
 
         {/* Right: What We Build */}
         <motion.div
-           initial={{ opacity: 0, y: 60 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true, margin: "-100px" }}
-           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{
+            duration: 0.8,
+            delay: 0.1,
+            ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+          }}
           className="relative p-8 md:p-16 flex flex-col justify-between bg-foreground text-background cursor-pointer overflow-hidden"
           onMouseEnter={() => setHoveredRight(true)}
           onMouseLeave={() => setHoveredRight(false)}
@@ -136,25 +157,39 @@ const DualitySplit = () => {
                 key={i}
                 className="flex items-center justify-between border-b border-background/15 pb-5"
                 animate={{ opacity: hoveredRight ? 1 : 0.6 }}
-                transition={{ duration: 0.4, delay: hoveredRight ? i * 0.08 : 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: hoveredRight ? i * 0.08 : 0,
+                }}
               >
                 <div className="flex items-baseline gap-3">
                   <motion.span
                     className="text-2xl md:text-3xl font-serif text-primary/30 tabular"
-                    animate={{ opacity: hoveredRight ? 1 : 0.4, scale: hoveredRight ? 1.1 : 1 }}
-                    transition={{ duration: 0.3, delay: hoveredRight ? i * 0.08 : 0 }}
+                    animate={{
+                      opacity: hoveredRight ? 1 : 0.4,
+                      scale: hoveredRight ? 1.1 : 1,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      delay: hoveredRight ? i * 0.08 : 0,
+                    }}
                   >
                     0{i + 1}
                   </motion.span>
                   <div>
-                    <p className="text-sm md:text-base font-sans font-semibold tracking-tight">{item.client}</p>
+                    <p className="text-sm md:text-base font-sans font-semibold tracking-tight">
+                      {item.client}
+                    </p>
                     <p className="text-xs opacity-50 mt-0.5">{item.type}</p>
                   </div>
                 </div>
                 <motion.span
                   className="text-lg md:text-xl font-serif text-primary tabular"
                   animate={{ opacity: hoveredRight ? 1 : 0 }}
-                  transition={{ duration: 0.3, delay: hoveredRight ? 0.15 + i * 0.08 : 0 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: hoveredRight ? 0.15 + i * 0.08 : 0,
+                  }}
                 >
                   {item.metric}
                 </motion.span>
@@ -165,7 +200,12 @@ const DualitySplit = () => {
               className="inline-flex items-center gap-2 text-sm font-sans font-semibold tracking-tight text-primary mt-4"
             >
               View Case Studies
-              <motion.span animate={{ x: hoveredRight ? 6 : 0 }} transition={{ duration: 0.3 }}>→</motion.span>
+              <motion.span
+                animate={{ x: hoveredRight ? 6 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                →
+              </motion.span>
             </Link>
           </div>
         </motion.div>

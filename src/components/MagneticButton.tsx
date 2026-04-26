@@ -8,7 +8,11 @@ interface MagneticButtonProps {
   asChild?: boolean;
 }
 
-export const MagneticButton = ({ children, className = "", onClick }: MagneticButtonProps) => {
+export const MagneticButton = ({
+  children,
+  className = "",
+  onClick,
+}: MagneticButtonProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 

@@ -3,7 +3,12 @@ import animate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -15,8 +20,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["'Instrument Sans'", "system-ui", "sans-serif"],
-        serif: ["'Fraunces'", "Georgia", "serif"],
+        sans: ["'Montserrat'", "sans-serif"],
+        serif: ["'Playfair Display'", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -62,6 +67,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        brand: {
+          velvet: "#1F1825",
+          navy: "#1A2B3C",
+          charcoal: "#343434",
+          amber: "#FFCF00",
+          black: "#000000",
+          white: "#FFFFFF",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -77,7 +90,7 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "marquee": {
+        marquee: {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
         },
@@ -85,7 +98,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "marquee": "marquee 30s linear infinite",
+        marquee: "marquee 30s linear infinite",
       },
     },
   },

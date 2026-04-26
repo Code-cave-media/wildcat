@@ -6,7 +6,8 @@ const articles = [
     title: "The Post-Authentic Economy",
     category: "Cultural Mapping",
     readTime: "8 min",
-    excerpt: "How consumer skepticism is reshaping brand trust frameworks across emerging markets.",
+    excerpt:
+      "How consumer skepticism is reshaping brand trust frameworks across emerging markets.",
     span: "md:col-span-7 md:row-span-2",
   },
   {
@@ -22,7 +23,8 @@ const articles = [
     title: "Decoding Cultural Velocity",
     category: "Data Analysis",
     readTime: "12 min",
-    excerpt: "Mapping the speed at which cultural signals translate to consumer behavior.",
+    excerpt:
+      "Mapping the speed at which cultural signals translate to consumer behavior.",
     span: "md:col-span-5",
   },
   {
@@ -30,7 +32,8 @@ const articles = [
     title: "The Trust Deficit Index",
     category: "Intelligence",
     readTime: "6 min",
-    excerpt: "Our proprietary metric measuring institutional trust erosion across 12 global markets.",
+    excerpt:
+      "Our proprietary metric measuring institutional trust erosion across 12 global markets.",
     span: "md:col-span-4",
   },
   {
@@ -38,7 +41,8 @@ const articles = [
     title: "Gen Z's Paradox of Choice",
     category: "Insights",
     readTime: "4 min",
-    excerpt: "Abundance breeds paralysis. How brands can cut through the noise.",
+    excerpt:
+      "Abundance breeds paralysis. How brands can cut through the noise.",
     span: "md:col-span-4",
   },
   {
@@ -57,7 +61,9 @@ const EditorialGrid = () => {
       <div className="container">
         <div className="flex items-baseline justify-between mb-12">
           <div>
-            <span className="text-xs font-sans uppercase tracking-widest text-muted-foreground">Intelligence Hub</span>
+            <span className="text-xs font-sans uppercase tracking-widest text-muted-foreground">
+              Intelligence Hub
+            </span>
             <h2 className="text-3xl md:text-5xl font-serif tracking-tighter mt-2 uppercase">
               Recent <span className="text-primary">Intelligence</span>
             </h2>
@@ -74,7 +80,11 @@ const EditorialGrid = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.4,
+                delay: i * 0.06,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className={`${article.span} bg-background p-6 md:p-8 flex flex-col justify-between group cursor-pointer hover:bg-foreground hover:text-background transition-colors duration-300`}
             >
               <div>

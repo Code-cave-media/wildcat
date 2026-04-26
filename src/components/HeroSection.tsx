@@ -6,17 +6,30 @@ import bgImage from "@/assets/bg.png";
 
 const textReveal = {
   hidden: { opacity: 0, y: "100%" },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } }
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+    },
+  },
 };
 
 const staggerContainer = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.2 } }
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+  },
 };
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
 
   const yParallaxH1 = useTransform(scrollYProgress, [0, 1], [0, 250]);
   const yParallaxContent = useTransform(scrollYProgress, [0, 1], [0, 150]);
@@ -39,8 +52,16 @@ const HeroSection = () => {
           animate="show"
         >
           <h1 className="text-[12vw] md:text-[10vw] leading-[0.85] tracking-tighter uppercase font-serif flex flex-col overflow-hidden">
-            <span className="overflow-hidden"><motion.span variants={textReveal} className="block">WE OBSERVE.</motion.span></span>
-            <span className="overflow-hidden"><motion.span variants={textReveal} className="text-primary block">WE BUILD.</motion.span></span>
+            <span className="overflow-hidden">
+              <motion.span variants={textReveal} className="block">
+                WE OBSERVE.
+              </motion.span>
+            </span>
+            <span className="overflow-hidden">
+              <motion.span variants={textReveal} className="text-primary block">
+                WE BUILD.
+              </motion.span>
+            </span>
           </h1>
         </motion.div>
 
@@ -52,18 +73,27 @@ const HeroSection = () => {
           className="mt-8 md:mt-12 flex flex-col md:flex-row md:items-end md:justify-between gap-8"
         >
           <p className="max-w-[55ch] text-base md:text-lg font-sans tracking-tight text-muted-foreground leading-relaxed">
-            Evidence-based disruption for the culturally restless. We are a hybrid media & communications company —
-            part cultural observatory, part brand-building engine.
+            Evidence-based disruption for the culturally restless. We are a
+            hybrid media & communications company — part cultural observatory,
+            part brand-building engine.
           </p>
 
           <MagneticButton>
-            <Link
-              to="/clarity-call"
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                (window as any).Calendly?.initPopupWidget({
+                  url: "https://calendly.com/wildcatdigitalconsulting/30min",
+                });
+              }}
               className="group relative inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-sans font-semibold tracking-tight text-sm uppercase hover:opacity-90 transition-opacity shrink-0"
             >
               Book a Clarity Call
-              <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-            </Link>
+              <span className="inline-block transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </a>
           </MagneticButton>
         </motion.div>
 
@@ -85,8 +115,12 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
             >
-              <span className="text-2xl md:text-3xl font-serif tabular">{item.metric}</span>
-              <p className="text-xs font-sans text-muted-foreground tracking-tight mt-1">{item.label}</p>
+              <span className="text-2xl md:text-3xl font-serif tabular">
+                {item.metric}
+              </span>
+              <p className="text-xs font-sans text-muted-foreground tracking-tight mt-1">
+                {item.label}
+              </p>
             </motion.div>
           ))}
         </motion.div>

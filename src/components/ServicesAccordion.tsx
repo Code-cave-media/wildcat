@@ -5,26 +5,42 @@ const services = [
   {
     title: "Brand Strategy",
     number: "01",
-    description: "We decode cultural signals to position brands with precision. Our strategies are built on evidence, not intuition — creating frameworks that endure market shifts.",
-    pillars: ["Positioning Architecture", "Narrative Design", "Competitive Mapping"],
+    description:
+      "We decode cultural signals to position brands with precision. Our strategies are built on evidence, not intuition — creating frameworks that endure market shifts.",
+    pillars: [
+      "Positioning Architecture",
+      "Narrative Design",
+      "Competitive Mapping",
+    ],
   },
   {
     title: "Growth Systems",
     number: "02",
-    description: "Scalable, data-informed frameworks that transform brand awareness into measurable market expansion. We build the engine, not just the fuel.",
-    pillars: ["Performance Architecture", "Channel Strategy", "Conversion Optimization"],
+    description:
+      "Scalable, data-informed frameworks that transform brand awareness into measurable market expansion. We build the engine, not just the fuel.",
+    pillars: [
+      "Performance Architecture",
+      "Channel Strategy",
+      "Conversion Optimization",
+    ],
   },
   {
     title: "Cultural Mapping",
     number: "03",
-    description: "Proprietary research methodologies that track cultural velocity — how fast signals travel from subculture to mainstream and what it means for your brand.",
+    description:
+      "Proprietary research methodologies that track cultural velocity — how fast signals travel from subculture to mainstream and what it means for your brand.",
     pillars: ["Trend Forensics", "Audience Cartography", "Signal Detection"],
   },
   {
     title: "Digital Experience",
     number: "04",
-    description: "Immersive digital platforms that don't just look premium — they perform. Every pixel is informed by behavioral data and cultural context.",
-    pillars: ["Platform Design", "Interactive Storytelling", "Experience Engineering"],
+    description:
+      "Immersive digital platforms that don't just look premium — they perform. Every pixel is informed by behavioral data and cultural context.",
+    pillars: [
+      "Platform Design",
+      "Interactive Storytelling",
+      "Experience Engineering",
+    ],
   },
 ];
 
@@ -41,7 +57,9 @@ const ServicesAccordion = () => {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-xs font-sans uppercase tracking-widest text-muted-foreground">What We Do</span>
+          <span className="text-xs font-sans uppercase tracking-widest text-muted-foreground">
+            What We Do
+          </span>
           <h2 className="text-3xl md:text-5xl font-serif tracking-tighter mt-2 uppercase">
             Core <span className="text-primary">Services</span>
           </h2>
@@ -61,7 +79,9 @@ const ServicesAccordion = () => {
             >
               <div className="py-6 md:py-8 flex items-center justify-between">
                 <div className="flex items-center gap-6 md:gap-12">
-                  <span className="text-sm font-sans text-muted-foreground tabular">{service.number}</span>
+                  <span className="text-sm font-sans text-muted-foreground tabular">
+                    {service.number}
+                  </span>
                   <h3 className="text-2xl md:text-4xl font-serif tracking-tighter group-hover:text-primary transition-colors duration-200">
                     {service.title}
                   </h3>
@@ -90,7 +110,10 @@ const ServicesAccordion = () => {
                       </p>
                       <div className="space-y-2">
                         {service.pillars.map((pillar) => (
-                          <div key={pillar} className="flex items-center gap-2 text-sm font-sans tracking-tight">
+                          <div
+                            key={pillar}
+                            className="flex items-center gap-2 text-sm font-sans tracking-tight"
+                          >
                             <span className="text-primary">†</span>
                             {pillar}
                           </div>

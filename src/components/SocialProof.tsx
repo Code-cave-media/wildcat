@@ -57,7 +57,11 @@ const SocialProof = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.4,
+                delay: i * 0.1,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="bg-background group"
             >
               <div className="overflow-hidden">
@@ -70,13 +74,19 @@ const SocialProof = () => {
               </div>
               <div className="p-6 md:p-8">
                 <div className="flex items-baseline justify-between mb-4">
-                  <h3 className="text-lg font-serif tracking-tight">{item.title}</h3>
-                  <span className="text-2xl font-serif text-primary tabular">{item.stat}</span>
+                  <h3 className="text-lg font-serif tracking-tight">
+                    {item.title}
+                  </h3>
+                  <span className="text-2xl font-serif text-primary tabular">
+                    {item.stat}
+                  </span>
                 </div>
                 <p className="text-sm font-sans text-muted-foreground leading-relaxed max-w-[45ch]">
                   {item.desc}
                 </p>
-                <p className="text-xs font-sans text-muted-foreground mt-2 tabular">{item.statLabel}</p>
+                <p className="text-xs font-sans text-muted-foreground mt-2 tabular">
+                  {item.statLabel}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -122,8 +132,12 @@ const SocialProof = () => {
               { value: "12", label: "Markets Observed" },
             ].map((stat) => (
               <div key={stat.label} className="bg-background p-6 md:p-8">
-                <span className="text-3xl md:text-4xl font-serif tabular">{stat.value}</span>
-                <p className="text-xs font-sans text-muted-foreground tracking-tight mt-2">{stat.label}</p>
+                <span className="text-3xl md:text-4xl font-serif tabular">
+                  {stat.value}
+                </span>
+                <p className="text-xs font-sans text-muted-foreground tracking-tight mt-2">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </motion.div>

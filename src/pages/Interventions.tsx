@@ -13,27 +13,31 @@ const caseStudies = [
     image: image1,
     industry: "Health & Wellness",
     interventionType: "Brand & Digital Transformation",
-    scenario: "They had a product worth believing in — whey protein, creatine, isolates — supported by a strong foundation in quality and intent.\n\nAt the same time, their brand presence hadn’t fully caught up with that potential. The website followed a standard WooCommerce structure, and the visual identity was still evolving — with room to build stronger consistency across colours, logo, and overall design language.\n\nThis created an opportunity: to better align how the brand showed up with the quality of what it offered, and to build a more cohesive, credible experience for customers from the very first interaction.",
+    scenario:
+      "They had a product worth believing in — whey protein, creatine, isolates — supported by a strong foundation in quality and intent.\n\nAt the same time, their brand presence hadn’t fully caught up with that potential. The website followed a standard WooCommerce structure, and the visual identity was still evolving — with room to build stronger consistency across colours, logo, and overall design language.\n\nThis created an opportunity: to better align how the brand showed up with the quality of what it offered, and to build a more cohesive, credible experience for customers from the very first interaction.",
     before: [
       "Website built on a standard WordPress theme with limited brand distinction",
       "Inconsistent colour usage and unclear visual hierarchy",
       "Basic wordmark without a strong identity system",
       "Navigation structure needed simplification",
-      "No defined guidelines to support future scaling"
+      "No defined guidelines to support future scaling",
     ],
     after: [
       "Distinct monogram logo designed for a performance-led identity",
       "Refined red, black, and white palette with clear usage principles",
       "Sora typeface bringing a clean, modern, and functional feel",
       "Structured mini brand book to guide consistency across touchpoints",
-      "Website redesign aligned with the new identity system"
+      "Website redesign aligned with the new identity system",
     ],
-    theShift: "From a brand that existed… to a brand that communicates intent, builds trust, and holds its ground in a competitive category."
-  }
+    theShift:
+      "From a brand that existed… to a brand that communicates intent, builds trust, and holds its ground in a competitive category.",
+  },
 ];
 
 const Interventions = () => {
-  const [selectedCase, setSelectedCase] = useState<typeof caseStudies[0] | null>(null);
+  const [selectedCase, setSelectedCase] = useState<
+    (typeof caseStudies)[0] | null
+  >(null);
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -42,23 +46,23 @@ const Interventions = () => {
     } else {
       document.body.style.overflow = "unset";
     }
-    
+
     return () => {
       document.body.style.overflow = "unset";
-    }
+    };
   }, [selectedCase]);
 
   return (
-    <div className="min-h-screen bg-white text-black selection:bg-[rgb(245,201,28)] selection:text-black font-sans">
+    <div className="min-h-screen bg-white text-black selection:bg-brand-amber selection:text-black font-sans">
       <Navbar />
 
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 lg:px-12 flex flex-col justify-center min-h-[70vh] border-b border-neutral-100 overflow-hidden bg-white">
         {/* Dynamic Motion Background */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#fafafa]">
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#FFFFFF]">
           <div className="absolute inset-0 opacity-40">
             <motion.div
-              className="absolute top-[-15%] right-[-5%] w-[45vw] h-[45vw] max-w-[600px] max-h-[600px] bg-[rgb(245,201,28)]/30 rounded-full blur-[100px]"
+              className="absolute top-[-15%] right-[-5%] w-[45vw] h-[45vw] max-w-[600px] max-h-[600px] bg-brand-amber/30 rounded-full blur-[100px]"
               animate={{
                 x: [0, -60, 0],
                 y: [0, 60, 0],
@@ -67,7 +71,7 @@ const Interventions = () => {
               transition={{
                 duration: 16,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
             />
             <motion.div
@@ -75,33 +79,80 @@ const Interventions = () => {
               animate={{
                 x: [0, 80, 0],
                 y: [0, -50, 0],
-                scale: [1, 1.1, 1]
+                scale: [1, 1.1, 1],
               }}
               transition={{
                 duration: 22,
                 repeat: Infinity,
                 ease: "easeInOut",
-                delay: 2
+                delay: 2,
               }}
             />
             {/* Grid Overlay */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_40%,#000_70%,transparent_100%)]"></div>
           </div>
         </div>
-        
-        <div className="max-w-7xl mx-auto w-full relative z-10">
+
+        <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col items-center text-center md:items-start md:text-left">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.1] mb-6 max-w-4xl">
-              We don't take on projects.<br />
-              <span className="text-[rgb(245,201,28)]">We step in when something needs to change.</span>
+            <div className="flex justify-center md:justify-start items-center gap-4 mb-6 overflow-hidden py-1">
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{
+                  duration: 1.2,
+                  delay: 0.2,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="h-[2px] w-16 bg-brand-amber origin-left"
+              />
+              <motion.span
+                initial={{ y: "100%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 1,
+                  delay: 0.4,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="text-sm md:text-base font-mono uppercase tracking-widest text-brand-amber inline-block"
+              >
+                Case Studies
+              </motion.span>
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-serif tracking-tighter leading-[0.9] mb-10 max-w-5xl text-black flex flex-col items-center md:items-start overflow-visible py-2">
+              <motion.span
+                initial={{ y: "110%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 1.2,
+                  ease: [0.16, 1, 0.3, 1],
+                  delay: 0.6,
+                }}
+                className="block"
+              >
+                Here's what
+              </motion.span>
+              <motion.span
+                initial={{ y: "110%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 1.2,
+                  ease: [0.16, 1, 0.3, 1],
+                  delay: 0.8,
+                }}
+                className="italic text-transparent bg-clip-text bg-gradient-to-r from-black to-neutral-400 block"
+              >
+                <span className="bg-brand-amber text-black px-2 py-1 inline-block">changed.</span>
+              </motion.span>
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-600 max-w-2xl font-light leading-relaxed mb-12">
-              When growth stalls, positioning blurs, or teams misalign, we intervene with clarity and direction.
+              When growth stalls, positioning blurs, or teams misalign, we
+              intervene with clarity and direction.
             </p>
           </motion.div>
         </div>
@@ -118,7 +169,8 @@ const Interventions = () => {
             className="mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-serif tracking-tight mb-4">
-              Featured <span className="text-[rgb(245,201,28)]">Interventions</span>
+              Featured{" "}
+              <span className="text-brand-amber">Interventions</span>
             </h2>
             <p className="text-lg text-neutral-600 font-light">
               Real examples of how we realign brand, product, and experience.
@@ -137,13 +189,13 @@ const Interventions = () => {
                 className="group cursor-pointer block"
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-100 mb-6">
-                  <img 
-                    src={study.image} 
-                    alt={study.title} 
+                  <img
+                    src={study.image}
+                    alt={study.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-                  
+
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
                     <span className="text-white text-lg font-medium tracking-widest uppercase border border-white/30 px-8 py-3 rounded-full flex items-center gap-2">
@@ -152,11 +204,15 @@ const Interventions = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 mb-3">
-                  <span className="text-xs font-mono uppercase tracking-widest text-[rgb(245,201,28)] font-bold">{study.industry}</span>
+                  <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold">
+                    {study.industry}
+                  </span>
                   <span className="w-1 h-1 rounded-full bg-neutral-300"></span>
-                  <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">{study.interventionType}</span>
+                  <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">
+                    {study.interventionType}
+                  </span>
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif group-hover:text-[rgb(245,201,28)] transition-colors">
+                <h3 className="text-xl md:text-2xl font-serif group-hover:text-brand-amber transition-colors">
                   {study.title}
                 </h3>
               </motion.div>
@@ -176,7 +232,7 @@ const Interventions = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="fixed inset-0 bg-neutral-900/40 backdrop-blur-md z-[100]"
+              className="fixed inset-0 bg-brand-charcoal/40 backdrop-blur-md z-[100]"
               onClick={() => setSelectedCase(null)}
             />
             <motion.div
@@ -187,31 +243,30 @@ const Interventions = () => {
               className="fixed inset-0 md:inset-6 lg:inset-10 bg-white md:rounded-[2.5rem] flex flex-col md:flex-row z-[101] overflow-hidden shadow-2xl"
             >
               <div className="flex flex-col md:flex-row w-full h-full relative">
-                
                 {/* Close Button - Floating */}
-                <button 
+                <button
                   onClick={() => setSelectedCase(null)}
-                  className="absolute top-6 right-6 z-50 p-3 bg-white/80 hover:bg-[rgb(245,201,28)] backdrop-blur-md rounded-full shadow-lg transition-all duration-300 group"
+                  className="absolute top-6 right-6 z-50 p-3 bg-white/80 hover:bg-brand-amber backdrop-blur-md rounded-full shadow-lg transition-all duration-300 group"
                 >
                   <X className="w-6 h-6 group-hover:scale-110 transition-transform text-black" />
                 </button>
 
                 {/* Left Side: Image & Hero */}
-                <div className="w-full md:w-1/2 relative h-[40vh] md:h-full bg-neutral-900 overflow-hidden shrink-0">
-                  <motion.div 
+                <div className="w-full md:w-1/2 relative h-[40vh] md:h-full bg-brand-charcoal overflow-hidden shrink-0">
+                  <motion.div
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     className="absolute inset-0"
                   >
-                    <img 
-                      src={selectedCase.image} 
+                    <img
+                      src={selectedCase.image}
                       alt={selectedCase.title}
                       className="w-full h-full object-cover opacity-50"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                   </motion.div>
-                  
+
                   <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 lg:p-16">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
@@ -219,8 +274,12 @@ const Interventions = () => {
                       transition={{ delay: 0.2, duration: 0.8 }}
                     >
                       <div className="flex flex-wrap items-center gap-3 mb-6">
-                        <span className="px-4 py-1.5 bg-[rgb(245,201,28)] text-black text-xs font-bold uppercase tracking-widest rounded-full">{selectedCase.industry}</span>
-                        <span className="px-4 py-1.5 bg-white/10 backdrop-blur-md text-white text-xs font-mono uppercase tracking-widest rounded-full border border-white/20">{selectedCase.interventionType}</span>
+                        <span className="px-4 py-1.5 bg-brand-amber text-black text-xs font-bold uppercase tracking-widest rounded-full">
+                          {selectedCase.industry}
+                        </span>
+                        <span className="px-4 py-1.5 bg-white/10 backdrop-blur-md text-white text-xs font-mono uppercase tracking-widest rounded-full border border-white/20">
+                          {selectedCase.interventionType}
+                        </span>
                       </div>
                       <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif max-w-xl tracking-tight leading-[1.05]">
                         {selectedCase.title}
@@ -230,31 +289,34 @@ const Interventions = () => {
                 </div>
 
                 {/* Right Side: Scrollable Content */}
-                <div 
+                <div
                   className="w-full md:w-1/2 flex-1 min-h-0 overflow-y-auto bg-white p-8 md:p-12 lg:p-16 relative"
                   data-lenis-prevent="true"
                 >
                   <div className="max-w-2xl mx-auto space-y-20 pb-12 md:pb-0">
-                    
                     {/* The Scenario */}
-                    <motion.section 
+                    <motion.section
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3, duration: 0.8 }}
                     >
                       <div className="flex items-center gap-4 mb-8">
-                        <div className="w-12 h-[2px] bg-[rgb(245,201,28)]"></div>
-                        <h3 className="text-sm font-bold uppercase tracking-widest text-black">The Scenario</h3>
+                        <div className="w-12 h-[2px] bg-brand-amber"></div>
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-black">
+                          The Scenario
+                        </h3>
                       </div>
                       <div className="text-xl text-neutral-600 font-light leading-relaxed space-y-6">
-                        {selectedCase.scenario.split('\n\n').map((paragraph, i) => (
-                          <p key={i}>{paragraph}</p>
-                        ))}
+                        {selectedCase.scenario
+                          .split("\n\n")
+                          .map((paragraph, i) => (
+                            <p key={i}>{paragraph}</p>
+                          ))}
                       </div>
                     </motion.section>
 
                     {/* Before & After Grid */}
-                    <motion.section 
+                    <motion.section
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4, duration: 0.8 }}
@@ -263,13 +325,22 @@ const Interventions = () => {
                         {/* Before */}
                         <div>
                           <div className="flex items-center gap-3 mb-6">
-                            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-red-100 text-red-500 font-bold text-sm">B</span>
-                            <h3 className="text-lg font-medium text-neutral-900">Before</h3>
+                            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-red-100 text-red-500 font-bold text-sm">
+                              B
+                            </span>
+                            <h3 className="text-lg font-medium text-brand-charcoal">
+                              Before
+                            </h3>
                           </div>
                           <ul className="space-y-4">
                             {selectedCase.before.map((item, i) => (
-                              <li key={i} className="flex gap-4 text-neutral-500 text-sm">
-                                <span className="text-red-300 font-mono mt-0.5 font-bold">-</span>
+                              <li
+                                key={i}
+                                className="flex gap-4 text-neutral-500 text-sm"
+                              >
+                                <span className="text-red-300 font-mono mt-0.5 font-bold">
+                                  -
+                                </span>
                                 <span>{item}</span>
                               </li>
                             ))}
@@ -279,13 +350,22 @@ const Interventions = () => {
                         {/* After */}
                         <div>
                           <div className="flex items-center gap-3 mb-6">
-                            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[rgb(245,201,28)]/20 text-[rgb(205,161,0)] font-bold text-sm">A</span>
-                            <h3 className="text-lg font-medium text-neutral-900">After</h3>
+                            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-amber/20 text-[rgb(205,161,0)] font-bold text-sm">
+                              A
+                            </span>
+                            <h3 className="text-lg font-medium text-brand-charcoal">
+                              After
+                            </h3>
                           </div>
                           <ul className="space-y-4">
                             {selectedCase.after.map((item, i) => (
-                              <li key={i} className="flex gap-4 text-neutral-800 text-sm font-medium">
-                                <span className="text-[rgb(245,201,28)] font-mono mt-0.5 font-bold">+</span>
+                              <li
+                                key={i}
+                                className="flex gap-4 text-brand-charcoal text-sm font-medium"
+                              >
+                                <span className="text-brand-amber font-mono mt-0.5 font-bold">
+                                  +
+                                </span>
                                 <span>{item}</span>
                               </li>
                             ))}
@@ -295,36 +375,48 @@ const Interventions = () => {
                     </motion.section>
 
                     {/* The Shift */}
-                    <motion.section 
+                    <motion.section
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5, duration: 0.8 }}
                       className="relative"
                     >
-                      <div className="absolute -top-12 -left-6 text-[140px] leading-none text-[rgb(245,201,28)] opacity-20 font-serif select-none pointer-events-none">"</div>
+                      <div className="absolute -top-12 -left-6 text-[140px] leading-none text-brand-amber opacity-20 font-serif select-none pointer-events-none">
+                        "
+                      </div>
                       <div className="relative z-10">
-                        <h3 className="text-xs font-mono uppercase tracking-widest text-neutral-400 mb-6">The Shift</h3>
+                        <h3 className="text-xs font-mono uppercase tracking-widest text-neutral-400 mb-6">
+                          The Shift
+                        </h3>
                         <p className="text-3xl md:text-4xl font-serif text-black leading-snug">
                           {selectedCase.theShift}
                         </p>
                       </div>
                     </motion.section>
 
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.6, duration: 0.8 }}
                       className="pt-8 flex flex-col md:flex-row items-center justify-between border-t border-neutral-100 gap-6"
                     >
-                      <p className="text-sm font-mono text-neutral-500 uppercase tracking-widest">Ready to realign?</p>
-                      <Link
-                        to="/clarity-call"
-                        onClick={() => setSelectedCase(null)}
-                        className="group inline-flex items-center gap-3 bg-[rgb(245,201,28)] text-black px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-neutral-900 hover:text-white transition-colors duration-300 rounded-full"
+                      <p className="text-sm font-mono text-neutral-500 uppercase tracking-widest">
+                        Ready to realign?
+                      </p>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setSelectedCase(null);
+                          (window as any).Calendly?.initPopupWidget({
+                            url: "https://calendly.com/wildcatdigitalconsulting/30min",
+                          });
+                        }}
+                        className="group inline-flex items-center gap-3 bg-brand-amber text-black px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-brand-charcoal hover:text-white transition-colors duration-300 rounded-full"
                       >
                         Start Your Intervention
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
+                      </a>
                     </motion.div>
                   </div>
                 </div>
@@ -338,4 +430,3 @@ const Interventions = () => {
 };
 
 export default Interventions;
-

@@ -25,24 +25,32 @@ const App = () => {
           <Toaster />
           <Sonner />
 
-          {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
-          
-          <div className={isLoading ? "h-screen overflow-hidden fixed inset-0 pointer-events-none opacity-0" : "animate-in fade-in duration-1000"}>
+          {isLoading && (
+            <LoadingScreen onComplete={() => setIsLoading(false)} />
+          )}
+
+          <div
+            className={
+              isLoading
+                ? "h-screen overflow-hidden fixed inset-0 pointer-events-none opacity-0"
+                : "animate-in fade-in duration-1000"
+            }
+          >
             <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/capabilities" element={<Capabilities />} />
-            <Route path="/interventions" element={<Interventions />} />
-            <Route path="/intelligence" element={<Intelligence />} />
-            <Route path="/who-we-are" element={<WhoWeAre />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-        </div>
-      </TooltipProvider>
-    </SmoothScroll>
-  </QueryClientProvider>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/capabilities" element={<Capabilities />} />
+                <Route path="/interventions" element={<Interventions />} />
+                <Route path="/intelligence" element={<Intelligence />} />
+                <Route path="/who-we-are" element={<WhoWeAre />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </div>
+        </TooltipProvider>
+      </SmoothScroll>
+    </QueryClientProvider>
   );
 };
 
