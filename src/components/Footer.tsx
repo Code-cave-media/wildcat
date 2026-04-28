@@ -122,13 +122,19 @@ const Footer = () => {
             </div>
             
             <div className="mt-8 pt-8 border-t border-neutral-800">
-              <Link
-                to="/who-we-are"
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  (window as any).Calendly?.initPopupWidget({
+                    url: "https://calendly.com/wildcatdigitalconsulting/30min",
+                  });
+                }}
                 className="inline-flex items-center gap-3 bg-brand-amber text-black px-6 py-3 text-sm font-medium uppercase tracking-widest hover:opacity-80 transition-opacity"
               >
                 Start a Conversation
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

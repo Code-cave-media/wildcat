@@ -384,6 +384,7 @@ const WhoWeAre = () => {
                 Let’s figure it out.
               </span>
             </p>
+
             <a
               href="#"
               onClick={(e) => {

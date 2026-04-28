@@ -385,13 +385,19 @@ const Index = () => {
               <p className="text-sm font-mono tracking-widest text-neutral-500 uppercase">
                 Culture. Strategy. Narrative. Growth
               </p>
-              <Link
-                to="/who-we-are"
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  (window as any).Calendly?.initPopupWidget({
+                    url: "https://calendly.com/wildcatdigitalconsulting/30min",
+                  });
+                }}
                 className="group flex items-center gap-3 text-sm font-medium uppercase tracking-widest bg-brand-amber text-black px-6 py-4 hover:opacity-80 transition-opacity"
               >
                 Start a Conversation
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -674,13 +680,19 @@ const Index = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Link
-              to="/who-we-are"
-              className="inline-flex items-center gap-3 bg-brand-amber text-black px-8 py-5 text-sm font-medium uppercase tracking-widest hover:opacity-80 transition-transform hover:scale-105 active:scale-95 duration-300 group"
-            >
-              Start a Conversation
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  (window as any).Calendly?.initPopupWidget({
+                    url: "https://calendly.com/wildcatdigitalconsulting/30min",
+                  });
+                }}
+                className="inline-flex items-center gap-3 bg-brand-amber text-black px-8 py-5 text-sm font-medium uppercase tracking-widest hover:opacity-80 transition-transform hover:scale-105 active:scale-95 duration-300 group"
+              >
+                Start a Conversation
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
           </motion.div>
         </div>
       </section>
