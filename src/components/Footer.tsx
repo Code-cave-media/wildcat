@@ -1,117 +1,149 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.svg";
+import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-foreground/20 bg-foreground text-background">
-      <div className="container py-16 md:py-24">
-        {/* Newsletter */}
-        <div className="pb-16 border-b border-background/20">
-          <h2 className="text-3xl md:text-5xl font-serif tracking-tighter uppercase">
-            Stay <span className="text-primary">Observed</span>
-          </h2>
-          <p className="text-sm font-sans text-background/60 mt-4 max-w-[45ch] leading-relaxed">
-            Weekly cultural intelligence delivered to decision-makers. No noise.
-            Only signal.
-          </p>
-          <form
-            className="mt-8 flex gap-0 max-w-md"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="flex-1 bg-background/10 border border-background/20 px-4 py-3 text-sm font-sans text-background placeholder:text-background/40 focus:outline-none focus:border-primary"
-            />
-            <button
-              type="submit"
-              className="bg-primary text-primary-foreground px-6 py-3 text-sm font-sans font-semibold tracking-tight hover:opacity-90 transition-opacity"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
+    <footer className="bg-black text-white border-t border-neutral-800">
+      <div className="container px-6 lg:px-12 py-16 md:py-24">
+        {/* Main Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+          {/* Brand Section */}
+          <div className="lg:col-span-1">
+            <Link to="/" className="inline-block mb-6">
+              <img src={logo} alt="Wildcat" className="h-8 w-auto invert" />
+            </Link>
+            <p className="text-neutral-400 text-sm leading-relaxed mb-6 max-w-xs">
+              Cultural Intelligence & Brand Building. We bring clarity to complex challenges.
+            </p>
+            <div className="flex gap-4">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center hover:bg-brand-amber hover:border-brand-amber transition-colors"
+              >
+                <span className="text-xs font-mono">in</span>
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center hover:bg-brand-amber hover:border-brand-amber transition-colors"
+              >
+                <span className="text-xs font-mono">x</span>
+              </a>
+            </div>
+          </div>
 
-        {/* Links Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16">
+          {/* Navigation */}
           <div>
-            <span className="text-xs font-sans uppercase tracking-widest text-background/40">
-              Navigate
-            </span>
-            <div className="mt-4 flex flex-col gap-3">
-              {["Home", "About", "Contact"].map((link) => (
+            <h3 className="text-sm font-mono uppercase tracking-widest text-neutral-500 mb-6">
+              Explore
+            </h3>
+            <ul className="space-y-3">
+              <li>
                 <Link
-                  key={link}
-                  to={`/${link.toLowerCase()}`}
-                  className="text-sm font-sans text-background/70 hover:text-primary transition-colors"
+                  to="/capabilities"
+                  className="text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-2 group"
                 >
-                  {link}
+                  Capabilities
+                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            <span className="text-xs font-sans uppercase tracking-widest text-background/40">
-              Services
-            </span>
-            <div className="mt-4 flex flex-col gap-3">
-              {[
-                "Brand Strategy",
-                "Growth Systems",
-                "Cultural Mapping",
-                "Digital Experience",
-              ].map((link) => (
+              </li>
+              <li>
                 <Link
-                  key={link}
-                  to="/services"
-                  className="text-sm font-sans text-background/70 hover:text-primary transition-colors"
+                  to="/interventions"
+                  className="text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-2 group"
                 >
-                  {link}
+                  Interventions
+                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            <span className="text-xs font-sans uppercase tracking-widest text-background/40">
-              Knowledge
-            </span>
-            <div className="mt-4 flex flex-col gap-3">
-              {["Intelligence", "Case Studies", "Insights"].map((link) => (
+              </li>
+              <li>
                 <Link
-                  key={link}
-                  to={`/${link.toLowerCase().replace(" ", "-")}`}
-                  className="text-sm font-sans text-background/70 hover:text-primary transition-colors"
+                  to="/intelligence"
+                  className="text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-2 group"
                 >
-                  {link}
+                  Intelligence
+                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
-              ))}
-            </div>
+              </li>
+              <li>
+                <Link
+                  to="/who-we-are"
+                  className="text-sm text-neutral-400 hover:text-white transition-colors flex items-center gap-2 group"
+                >
+                  Who We Are
+                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+            </ul>
           </div>
+
+          {/* Services */}
           <div>
-            <span className="text-xs font-sans uppercase tracking-widest text-background/40">
+            <h3 className="text-sm font-mono uppercase tracking-widest text-neutral-500 mb-6">
+              What We Do
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <span className="text-sm text-neutral-400">Market & Cultural Insight</span>
+              </li>
+              <li>
+                <span className="text-sm text-neutral-400">Brand Strategy</span>
+              </li>
+              <li>
+                <span className="text-sm text-neutral-400">Brand Narrative</span>
+              </li>
+              <li>
+                <span className="text-sm text-neutral-400">Performance & Growth</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-sm font-mono uppercase tracking-widest text-neutral-500 mb-6">
               Connect
-            </span>
-            <div className="mt-4 flex flex-col gap-3">
-              {["LinkedIn", "Twitter/X", "Instagram"].map((link) => (
-                <a
-                  key={link}
-                  href="#"
-                  className="text-sm font-sans text-background/70 hover:text-primary transition-colors"
-                >
-                  {link}
-                </a>
-              ))}
+            </h3>
+            <div className="space-y-4">
+              <a
+                href="mailto:hello@wildcat.com"
+                className="flex items-center gap-3 text-sm text-neutral-400 hover:text-white transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                hello@wildcat.com
+              </a>
+              <div className="flex items-center gap-3 text-sm text-neutral-400">
+                <MapPin className="w-4 h-4" />
+                Bangalore, India
+              </div>
+            </div>
+            
+            <div className="mt-8 pt-8 border-t border-neutral-800">
+              <Link
+                to="/who-we-are"
+                className="inline-flex items-center gap-3 bg-brand-amber text-black px-6 py-3 text-sm font-medium uppercase tracking-widest hover:opacity-80 transition-opacity"
+              >
+                Start a Conversation
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-background/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <img src={logo} alt="Wildcat" className="h-5 invert" />
-          <p className="text-xs font-sans text-background/40">
-            © {new Date().getFullYear()} Wildcat. Cultural Intelligence & Brand
-            Building.
-          </p>
+        {/* Bottom Section */}
+        <div className="mt-16 pt-8 border-t border-neutral-800">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-xs text-neutral-500">
+              © {new Date().getFullYear()} Wildcat. Cultural Intelligence & Brand Building.
+            </p>
+            <div className="flex gap-6 text-xs text-neutral-500">
+              <span className="hover:text-neutral-400 transition-colors cursor-pointer">Privacy Policy</span>
+              <span className="hover:text-neutral-400 transition-colors cursor-pointer">Terms of Service</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

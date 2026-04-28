@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import founder1 from "@/img/founder1.png";
 import founder2 from "@/img/founder2.png";
 import founder3 from "@/img/founder3.png";
+
 const WhoWeAre = () => {
   return (
     <div className="min-h-screen bg-white text-black selection:bg-brand-amber selection:text-black font-sans">

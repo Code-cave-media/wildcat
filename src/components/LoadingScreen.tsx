@@ -20,7 +20,7 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
       {isVisible && (
         <motion.div
           key="loading-screen"
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#1F1825] overflow-hidden"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black overflow-hidden"
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }} // Fade out the container last
         >
@@ -29,7 +29,7 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
             initial={{ height: "100%" }}
             exit={{ height: "0%" }}
             transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
-            className="absolute top-0 left-0 w-[33.4%] bg-[#1F1825] z-[60] origin-top"
+            className="absolute top-0 left-0 w-[33.4%] bg-black z-[60] origin-top"
           />
           <motion.div
             initial={{ height: "100%" }}
@@ -39,7 +39,7 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
               ease: [0.77, 0, 0.175, 1],
               delay: 0.1,
             }}
-            className="absolute top-0 left-[33.3%] w-[33.4%] bg-[#1F1825] z-[60] origin-top"
+            className="absolute top-0 left-[33.3%] w-[33.4%] bg-black z-[60] origin-top"
           />
           <motion.div
             initial={{ height: "100%" }}
@@ -49,7 +49,7 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
               ease: [0.77, 0, 0.175, 1],
               delay: 0.2,
             }}
-            className="absolute top-0 left-[66.6%] w-[33.4%] bg-[#1F1825] z-[60] origin-top"
+            className="absolute top-0 left-[66.6%] w-[33.4%] bg-black z-[60] origin-top"
           />
 
           {/* Golden Blob - Highly Kinetic */}

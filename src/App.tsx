@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useState } from "react";
 import { LoadingScreen } from "./components/LoadingScreen.tsx";
+import ScrollToTop from "./components/ScrollToTop.tsx";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Capabilities from "./pages/Capabilities.tsx";
@@ -37,6 +38,7 @@ const App = () => {
             }
           >
             <BrowserRouter>
+              <ScrollToTop />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/capabilities" element={<Capabilities />} />
