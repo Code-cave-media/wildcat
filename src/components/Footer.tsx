@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.svg";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin, Linkedin, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -18,20 +18,20 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.instagram.com/wildcatco/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center hover:bg-brand-amber hover:border-brand-amber transition-colors"
               >
-                <span className="text-xs font-mono">in</span>
+                <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://www.linkedin.com/company/wildcat-digital-consulting/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-neutral-700 flex items-center justify-center hover:bg-brand-amber hover:border-brand-amber transition-colors"
               >
-                <span className="text-xs font-mono">x</span>
+                <Linkedin className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -109,11 +109,11 @@ const Footer = () => {
             </h3>
             <div className="space-y-4">
               <a
-                href="mailto:hello@wildcat.com"
+                href="mailto:info@wildcatdigital.in"
                 className="flex items-center gap-3 text-sm text-neutral-400 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                hello@wildcat.com
+                info@wildcatdigital.in
               </a>
               <div className="flex items-center gap-3 text-sm text-neutral-400">
                 <MapPin className="w-4 h-4" />
